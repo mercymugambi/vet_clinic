@@ -53,4 +53,13 @@ SELECT * FROM animals;
 
 COMMIT;
 
+-- delete animals table and rollback
+BEGIN;
+
+DELETE FROM animals;
+
+SELECT * FROM animals;
+
+ROLLBACK;
+
 
