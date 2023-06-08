@@ -115,4 +115,8 @@ FROM animals
 
 GROUP BY neutered;
 
+-- minmum and maximum weight of animals
+SELECT species,  MIN(weight_kg) AS min_weight, MAX(weight_kg) AS max_weight
+FROM animals
 
+GROUP BY species;
