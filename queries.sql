@@ -84,3 +84,21 @@ UPDATE animals
 SET weight_kg = weight_kg * -1;
 
 SELECT * FROM animals;
+
+-- weight UPDATE for all with -1
+BEGIN;
+SAVEPOINT weights;
+
+UPDATE animals
+SET weight_kg = weight_kg * -1
+WHERE weight_kg < 0;
+
+select * from animals
+
+COMMIT;
+
+-- total count for animals in vet clinic
+SELECT count(*) as total_animals
+from animals;
+
+
