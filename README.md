@@ -57,17 +57,14 @@ After you're finished please remove all the comments and instructions!
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [your_project_name] <a name="about-project"></a>
+# 📖 [vet clinic] <a name="about-project"></a>
 
-> Describe your project in 1 or 2 sentences.
-
-**[your_project__name]** is a...
+**[Vet clinic]** is a project, I used relational database to create the initial data structure for a vet clinic. I created a table to store animals' information, inserted some data into it, and queried it.
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
-> In this project, I use a relational database to create the initial data structure for a vet clinic. I created a table to store animals' information, inserted some data into it, and queried it.
 
 <details>
 <summary>Database</summary>
@@ -162,7 +159,6 @@ Example command:
 ```sh
   use sql shell to execute syntaxs
 ```
--
 
 <!-- ### Deployment -->
 
@@ -207,7 +203,7 @@ Example:
 
 Contributions, issues, and feature requests are welcome!
 
-- https://github.com/mercymugambi/space-travel-project/issues
+- https://github.com/mercymugambi/vet_clinic/issues
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
