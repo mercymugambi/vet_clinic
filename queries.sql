@@ -30,5 +30,99 @@ WHERE name <> 'Gabumon';
 SELECT * FROM animals
 WHERE weight_kg BETWEEN 10.4 AND 17.3;
 
+-- Start of new transaction with rollback
+BEGIN;
 
+UPDATE animals
+SET species = 'unspecified';
 
+SELECT * FROM animals;
+
+ROLLBACK;
+
+SELECT * FROM animals;
+
+-- Start of new transaction with pokeman and digimon commita
+BEGIN;
+
+UPDATE animals
+SET species = 'pokemon'
+WHERE species = '';
+
+SELECT * FROM animals;
+
+COMMIT;
+
+-- delete animals table and rollback
+BEGIN;
+
+DELETE FROM animals;
+
+SELECT * FROM animals;
+
+ROLLBACK;
+
+-- Delete animals born after Jan 1st, 2022
+BEGIN;
+
+DELETE FROM animals
+WHERE date_of_birth > '2022-01-01';
+
+SELECT * FROM animals;
+
+ROLLBACK;
+
+-- CREATE savepoint name dob_delete
+BEGIN;
+
+SAVEPOINT dob_delete;
+
+-- multiply weight by -1
+BEGIN;
+
+UPDATE animals
+SET weight_kg = weight_kg * -1;
+
+SELECT * FROM animals;
+
+-- weight UPDATE for all with -1
+BEGIN;
+SAVEPOINT weights;
+
+UPDATE animals
+SET weight_kg = weight_kg * -1
+WHERE weight_kg < 0;
+
+select * from animals
+
+COMMIT;
+
+-- total count for animals in vet clinic
+SELECT count(*) as total_animals
+from animals;
+
+-- animals never escaped
+SELECT count(*) as neverEscaped
+from animals WHERE escape_attempts = 0;
+
+-- average weight 
+SELECT AVG(weight_kg) as average_weight
+FROM animals.
+
+-- Query for maxEscapes
+SELECT MAX(escape_attempts) AS maxEscapes
+FROM animals
+
+GROUP BY neutered;
+
+-- minmum and maximum weight of animals
+SELECT species,  MIN(weight_kg) AS min_weight, MAX(weight_kg) AS max_weight
+FROM animals
+
+GROUP BY species;
+
+-- average escape attempts
+SELECT species, AVG(escape_attempts) AS average_escape_attempts
+FROM animals
+WHERE date_of_birth BETWEEN '1990-01-01' AND '2000-12-31'
+GROUP BY species;
