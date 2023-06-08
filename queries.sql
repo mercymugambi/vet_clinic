@@ -11,7 +11,9 @@ WHERE date_of_birth BETWEEN '2016-01-01' AND '2019-12-31';
 SELECT name FROM animals
 WHERE neutered = true AND escape_attempts < 3;
 
-
+-- List the date of birth of all animals named either "Agumon" or "Pikachu".
+SELECT date_of_birth FROM animals
+WHERE name IN ('Agumon', 'Pikachu');
 
 
 
