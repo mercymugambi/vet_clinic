@@ -101,4 +101,8 @@ COMMIT;
 SELECT count(*) as total_animals
 from animals;
 
+-- animals never escaped
+SELECT count(*) as neverEscaped
+from animals WHERE escape_attempts = 0;
+
 
