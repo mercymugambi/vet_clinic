@@ -145,3 +145,8 @@ id SERIAL,
 -- drop column species
 ALTER TABLE animals
 DROP column species
+
+-- Add foreign KEY and create species_id column 
+ALTER TABLE animals
+ADD COLUMN species_id INT,
+ADD CONSTRAINT fk_species_id FOREIGN KEY (species_id) REFERENCES species (id); 
