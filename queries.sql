@@ -1,3 +1,5 @@
-/*Queries that provide answers to the questions from all projects.*/
+-- display animals whose name ends in "mon"
+SELECT * FROM animals
+WHERE name LIKE '%mon';
 
-SELECT * from animals WHERE name = 'Luna';
+
