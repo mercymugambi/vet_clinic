@@ -105,4 +105,10 @@ from animals;
 SELECT count(*) as neverEscaped
 from animals WHERE escape_attempts = 0;
 
+-- average weight 
+SELECT AVG(weight_kg) as average_weight
+FROM animals.
+
+
+
 
