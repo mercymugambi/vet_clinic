@@ -62,4 +62,17 @@ SELECT * FROM animals;
 
 ROLLBACK;
 
+-- Delete animals born after Jan 1st, 2022
+BEGIN;
 
+DELETE FROM animals
+WHERE date_of_birth > '2022-01-01';
+
+SELECT * FROM animals;
+
+ROLLBACK;
+
+-- CREATE savepoint name dob_delete
+BEGIN;
+
+SAVEPOINT dob_delete;
