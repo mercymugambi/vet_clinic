@@ -141,3 +141,7 @@ id SERIAL,
 	name varchar (255),
 	PRIMARY KEY (id)
 );
+
+-- drop column species
+ALTER TABLE animals
+DROP column species
