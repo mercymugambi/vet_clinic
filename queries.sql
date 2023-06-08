@@ -76,3 +76,11 @@ ROLLBACK;
 BEGIN;
 
 SAVEPOINT dob_delete;
+
+-- multiply weight by -1
+BEGIN;
+
+UPDATE animals
+SET weight_kg = weight_kg * -1;
+
+SELECT * FROM animals;
