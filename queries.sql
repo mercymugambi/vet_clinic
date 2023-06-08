@@ -134,3 +134,10 @@ CREATE TABLE owners (
 	age int,
 	PRIMARY KEY (id)
 );
+
+-- create table species
+CREATE TABLE species (
+id SERIAL,
+	name varchar (255),
+	PRIMARY KEY (id)
+);
