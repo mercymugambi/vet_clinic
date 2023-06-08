@@ -26,6 +26,9 @@ WHERE neutered = true;
 SELECT * FROM animals
 WHERE name <> 'Gabumon';
 
+-- Animals kg between 10.4 and 17.3
+SELECT * FROM animals
+WHERE weight_kg BETWEEN 10.4 AND 17.3;
 
 
 
