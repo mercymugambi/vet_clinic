@@ -152,3 +152,12 @@ SELECT animals.name
 FROM animals
 JOIN species ON animals.species_id = species.id
 WHERE species.name = 'Pokemon';
+
+SELECT owners.full_name, animals.name
+FROM owners
+LEFT JOIN animals ON owners.id = animals.owners_id
+
+SELECT species_id, count(*) AS animals_per_species
+FROM ANIMALS
+
+GROUP BY species_id
