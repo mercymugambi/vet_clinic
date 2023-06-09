@@ -167,3 +167,8 @@ from animals
 join owners on animals.owners_id = owners.id
 join species on animals.species_id = species.id
 where species.name = 'Digimon' AND owners.full_name = 'Jennifer Orwell'
+
+Select animals.name, animals.escape_attempts, animals.owners_id
+From animals
+join owners on animals.owners_id = owners.id
+where owners.full_name = 'Dean Winchester' and animals.escape_attempts = '0';
