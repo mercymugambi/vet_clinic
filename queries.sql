@@ -234,3 +234,13 @@ JOIN animals ON visits.animal_id = animals.id
 JOIN vets ON visits.vet_id = vets.id
 LEFT JOIN specializations ON vets.id = specializations.vet_id AND animals.species_id = specializations.species_id
 WHERE specializations.vet_id IS NULL;
+
+SELECT species.name, COUNT(*) AS num_visits
+FROM visits
+JOIN animals ON visits.animal_id = animals.id
+JOIN vets ON visits.vet_id = vets.id
+JOIN specializations ON vets.id = specializations.vet_id
+JOIN species ON specializations.species_id = species.id
+WHERE vets.name = 'Maisy Smith'
+GROUP BY species.name
+ORDER BY num_visits DESC
