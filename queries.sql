@@ -179,3 +179,68 @@ JOIN animals ON owners.id = animals.owners_id
 GROUP BY owners.id, owners.full_name
 ORDER BY animal_count DESC
 LIMIT 1;
+
+-- Who was the last animal seen by William Tatcher?
+select animals.name, visits.visit_date
+from animals
+join visits on visits.animal_id = animals.id
+join vets on visits.vet_id = vets.id
+WHERE vets.name = 'William Tatcher'
+  AND visits.visit_date = (
+    SELECT MAX(visit_date)
+    FROM visits
+    WHERE vet_id = vets.id
+  );
+
+-- How many different animals did Stephanie Mendez see?
+SELECT COUNT(animals.id) AS Mendez_totals_seen
+FROM animals
+JOIN visits ON visits.animal_id = animals.id
+JOIN vets ON visits.vet_id = vets.id
+WHERE vets.name = 'Stephanie Mendez'
+
+SELECT vets.name, species_id
+FROM vets
+JOIN specializations ON vets.id = specializations.vet_id
+ORDER BY vets.name;
+
+
+SELECT animals.name, vets.name, visits.visit_date
+FROM animals
+JOIN visits ON animals.id = visits.animal_id
+JOIN vets ON visits.vet_id = vets.id
+JOIN specializations ON vets.id = specializations.vet_id
+WHERE vets.name = 'Stephanie Mendez'
+AND visits.visit_date BETWEEN '2020-04-01' AND '2020-08-30';
+
+SELECT animals.name, COUNT(visits.animal_id) AS visit_count
+FROM animals
+JOIN visits ON animals.id = visits.animal_id
+GROUP BY animals.name
+ORDER BY visit_count DESC
+LIMIT 1;
+
+SELECT animals.name AS animal_name, visits.visit_date
+FROM visits
+JOIN vets ON visits.vet_id = vets.id
+JOIN animals ON visits.animal_id = animals.id
+WHERE vets.name = 'Maisy Smith'
+ORDER BY visits.visit_date ASC
+LIMIT 1;
+
+SELECT COUNT(*) AS num_visits
+FROM visits
+JOIN animals ON visits.animal_id = animals.id
+JOIN vets ON visits.vet_id = vets.id
+LEFT JOIN specializations ON vets.id = specializations.vet_id AND animals.species_id = specializations.species_id
+WHERE specializations.vet_id IS NULL;
+
+SELECT species.name, COUNT(*) AS num_visits
+FROM visits
+JOIN animals ON visits.animal_id = animals.id
+JOIN vets ON visits.vet_id = vets.id
+JOIN specializations ON vets.id = specializations.vet_id
+JOIN species ON specializations.species_id = species.id
+WHERE vets.name = 'Maisy Smith'
+GROUP BY species.name
+ORDER BY num_visits DESC
