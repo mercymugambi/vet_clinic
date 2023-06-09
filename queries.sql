@@ -180,6 +180,7 @@ GROUP BY owners.id, owners.full_name
 ORDER BY animal_count DESC
 LIMIT 1;
 
+-- Who was the last animal seen by William Tatcher?
 select animals.name, visits.visit_date
 from animals
 join visits on visits.animal_id = animals.id
@@ -190,3 +191,11 @@ WHERE vets.name = 'William Tatcher'
     FROM visits
     WHERE vet_id = vets.id
   );
+
+-- How many different animals did Stephanie Mendez see?
+SELECT COUNT(animals.id) AS Mendez_totals_seen
+FROM animals
+JOIN visits ON visits.animal_id = animals.id
+JOIN vets ON visits.vet_id = vets.id
+WHERE vets.name = 'Stephanie Mendez'
+
