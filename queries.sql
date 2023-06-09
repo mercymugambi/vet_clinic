@@ -142,4 +142,8 @@ id SERIAL,
 	PRIMARY KEY (id)
 );
 
- 
+--  animals belong to melody 
+SELECT animals.name
+FROM animals
+JOIN owners ON animals.owners_id = owners.id
+WHERE owners.full_name = 'Melody Pond';
