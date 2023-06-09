@@ -52,3 +52,9 @@ set owners_id =(
  select id from owners where full_name = 'Melody Pond'
 )
 where name IN ('Charmander', 'Squirtle', 'Blossom');
+
+update animals
+set owners_id =(
+ select id from owners where full_name = 'Dean Winchester'
+)
+where name IN ('Angemon', 'Boarmon');
