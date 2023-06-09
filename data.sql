@@ -29,3 +29,14 @@ SET species_id = (
     END
 );
 
+update animals
+set owners_id =(
+ select id from owners where full_name = 'Sam Smith'
+)
+where name = 'Agumon'
+
+update animals
+set owners_id =(
+ select id from owners where full_name = 'Jennifer Orwell'
+)
+where name IN ('Gabumon', 'Pikachu');
