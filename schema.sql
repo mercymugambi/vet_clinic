@@ -37,7 +37,6 @@ CREATE TABLE vets (
 CREATE TABLE specializations (
   vet_id INT,
   species_id INT,
-  PRIMARY KEY (vet_id, species_id),
   FOREIGN KEY (vet_id) REFERENCES vets(id),
   FOREIGN KEY (species_id) REFERENCES species(id)
 );
@@ -46,7 +45,6 @@ CREATE TABLE visits (
   animal_id INT,
   vet_id INT,
   visit_date DATE,
-  PRIMARY KEY (animal_id, vet_id),
   FOREIGN KEY (animal_id) REFERENCES animals(id),
   FOREIGN KEY (vet_id) REFERENCES vets(id)
 );
