@@ -199,3 +199,7 @@ JOIN visits ON visits.animal_id = animals.id
 JOIN vets ON visits.vet_id = vets.id
 WHERE vets.name = 'Stephanie Mendez'
 
+SELECT vets.name, species_id
+FROM vets
+JOIN specializations ON vets.id = specializations.vet_id
+ORDER BY vets.name;
