@@ -161,3 +161,9 @@ SELECT species_id, count(*) AS animals_per_species
 FROM ANIMALS
 
 GROUP BY species_id
+
+select animals.name
+from animals
+join owners on animals.owners_id = owners.id
+join species on animals.species_id = species.id
+where species.name = 'Digimon' AND owners.full_name = 'Jennifer Orwell'
