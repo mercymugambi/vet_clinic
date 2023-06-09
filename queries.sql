@@ -179,3 +179,14 @@ JOIN animals ON owners.id = animals.owners_id
 GROUP BY owners.id, owners.full_name
 ORDER BY animal_count DESC
 LIMIT 1;
+
+select animals.name, visits.visit_date
+from animals
+join visits on visits.animal_id = animals.id
+join vets on visits.vet_id = vets.id
+WHERE vets.name = 'William Tatcher'
+  AND visits.visit_date = (
+    SELECT MAX(visit_date)
+    FROM visits
+    WHERE vet_id = vets.id
+  );
