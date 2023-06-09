@@ -40,3 +40,11 @@ set owners_id =(
  select id from owners where full_name = 'Jennifer Orwell'
 )
 where name IN ('Gabumon', 'Pikachu');
+
+update animals
+set owners_id =(
+ select id from owners where full_name = 'Bob'
+)
+where name IN ('Devimon', 'Plantmon');
+
+
