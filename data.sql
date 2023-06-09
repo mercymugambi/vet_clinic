@@ -20,4 +20,12 @@ VALUES
 ('Digimon');
 
 
+-- Modify your inserted animals so it includes the species_id value:
+UPDATE animals
+SET species_id = (
+    CASE 
+        WHEN name LIKE '%mon' THEN (SELECT id FROM species WHERE name = 'Digimon')
+        ELSE (SELECT id FROM species WHERE name = 'Pokemon')
+    END
+);
 
