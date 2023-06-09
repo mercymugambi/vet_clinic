@@ -212,3 +212,10 @@ JOIN vets ON visits.vet_id = vets.id
 JOIN specializations ON vets.id = specializations.vet_id
 WHERE vets.name = 'Stephanie Mendez'
 AND visits.visit_date BETWEEN '2020-04-01' AND '2020-08-30';
+
+SELECT animals.name, COUNT(visits.animal_id) AS visit_count
+FROM animals
+JOIN visits ON animals.id = visits.animal_id
+GROUP BY animals.name
+ORDER BY visit_count DESC
+LIMIT 1;
