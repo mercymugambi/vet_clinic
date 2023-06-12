@@ -244,3 +244,7 @@ JOIN species ON specializations.species_id = species.id
 WHERE vets.name = 'Maisy Smith'
 GROUP BY species.name
 ORDER BY num_visits DESC
+
+-- WEEK 2
+
+
