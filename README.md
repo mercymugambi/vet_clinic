@@ -2,34 +2,11 @@
 
 This repository includes files with plain SQL that can be used to recreate a database:
 
-- Use [schema.sql](./schema.sql) to create all tables.
-- Use [data.sql](./data.sql) to populate tables with sample data.
-- Check [queries.sql](./queries.sql) for examples of queries that can be run on a newly created database. **Important note: this file might include queries that make changes in the database (e.g., remove records). Use them responsibly!**
+- Use schema.sql to create all tables.
+- Use data.sql to populate tables with sample data.
+- Check queries.sql for examples of queries that can be run on a newly created database. Important note: this file might include queries that make changes in the database (e.g., remove records). Use them responsibly!
 
 <a name="readme-top"></a>
-
-<!--
-HOW TO USE:
-This is an example of how you may give instructions on setting up your project locally.
-
-Modify this file to match your project and remove sections that don't apply.
-
-REQUIRED SECTIONS:
-- Table of Contents
-- About the Project
-  - Built With
-  - Live Demo
-- Getting Started
-- Authors
-- Future Features
-- Contributing
-- Show your support
-- Acknowledgements
-- License
-
-After you're finished please remove all the comments and instructions!
--->
-
 
 <!-- TABLE OF CONTENTS -->
 
@@ -37,62 +14,36 @@ After you're finished please remove all the comments and instructions!
 
 - [📖 About the Project](#about-project)
   - [🛠 Built With](#built-with)
-    - [Tech Stack](#tech-stack)
-    - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
-  - [Install](#install)
-  - [Usage](#usage)
   - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ](#faq)
 - [📝 License](#license)
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [vet clinic] <a name="about-project"></a>
+# 📖 Create the database clinic based on diagram <a name="about-project"></a>
 
-**[Vet clinic]** is a project, I used relational database to create the initial data structure for a vet clinic. I created a table to store animals' information, inserted some data into it, and queried it.
+- This project about converting the schema diagram into the sql commands using the postgresql, contains table for the patients and treatments etc....
 
 ## 🛠 Built With <a name="built-with"></a>
 
-### Tech Stack <a name="tech-stack"></a>
-
-
-<details>
-<summary>Database</summary>
-  <ul>
-    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
-  </ul>
-</details>
-
-<!-- Features -->
-
-### Key Features <a name="key-features"></a>
-
-> Describe between 1-3 key features of the application.
-
-- **[Animals_list]**
-- **[Queries]**
+- Sql commands
+- Postgresql
+- schema diagram
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- LIVE DEMO -->
+## Key Features
 
-<!-- ## 🚀 Live Demo <a name="live-demo"></a>
-
-> Add a link to your deployed project.
-
-- [Live Demo Link](<replace-with-your-deployment-URL>)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
+- Schema based on diagram😊👌
+- OPtimization the foreign key with indexing💯
+- Use the many to many relationship🚀
 
 <!-- GETTING STARTED -->
 
@@ -104,81 +55,66 @@ To get a local copy up and running, follow these steps.
 
 In order to run this project you need:
 
-
 Example command:
 
 ```sh
- install postgresql
+1.use a browser
+2.use cable internet
 ```
-
 
 ### Setup
 
 Clone this repository to your desired folder:
 
-
 Example commands:
 
 ```sh
-  cd my-folder
-  git clone https://github.com/mercymugambi/vet_clinic.git
+
+  git clone git@github.com:mercymugambi/vet_clinic.git
+  cd vet_clinic
+
+
 ```
--
 
 ### Install
 
 Install this project with:
 
-
 Example command:
 
 ```sh
-  cd my-project
-  gem install
+bundle install
 ```
--
 
-<!-- ### Usage
+### Usage
 
 To run the project, execute the following command:
 
-<!--
 Example command:
 
 ```sh
-  rails server
+- Open the terminal to play with the commands.
 ```
----> 
 
 ### Run tests
 
-To run tests, run the following command:
+To run tests for the linter, run the following command:
 
 Example command:
 
 ```sh
-  use sql shell to execute syntaxs
+rubocop -A
 ```
-
-<!-- ### Deployment -->
-
-<!-- You can deploy this project using: -->
-
-<!--
-Example:
-
-```sh
-
-```
- -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- AUTHORS -->
-
 ## 👥 Authors <a name="authors"></a>
 
-> Mention all of the collaborators of this project.
+👤 **Mucha Naibei**
+
+- GitHub: [mnaibei](https://github.com/mnaibei)
+- Twitter: [MNaibei\_](https://twitter.com/mnaibei_)
+- LinkedIn: [Mucha Julius](https://linkedin.com/in/mucha-julius)
 
 👤 **Mercy Mugambi**
 
@@ -192,8 +128,9 @@ Example:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-
-- [ ] **[Link with website]**
+- [ ] Enhance the sql commands using query plan.
+- [ ] Add more tables💯.
+- [ ] Add other relationships to the tables.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -203,7 +140,7 @@ Example:
 
 Contributions, issues, and feature requests are welcome!
 
-- https://github.com/mercymugambi/vet_clinic/issues
+Feel free to check the [Isuues Pages](https://github.com/mercymugambi/vet_clinic/issues)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -211,7 +148,7 @@ Contributions, issues, and feature requests are welcome!
 
 ## ⭐️ Show your support <a name="support"></a>
 
-If you like this project, please give a star.
+If you like this project kindly give it a star⭐️.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -219,7 +156,7 @@ If you like this project, please give a star.
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank Microverse, my learning partners and every single Youtube channel.
+I would like to thank Ekpenisi E Raphael for the immense support.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -227,6 +164,6 @@ I would like to thank Microverse, my learning partners and every single Youtube 
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENSE) licensed.
+This project is [MIT](https://github.com/mercymugambi/vet_clinic/blob/schema-based-diagram/LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
